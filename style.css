@@ -72,3 +72,34 @@ body {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+#birthday-message {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  animation: fadeIn 2s ease-in;
+}
+
+#show-poem {
+  margin-top: 2rem;
+  padding: 10px 20px;
+  border: none;
+  background-color: #aee1f9;
+  color: #333;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#show-poem:hover {
+  background-color: #91d0ec;
+}
+
+.poem {
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 2s ease-in;
+}
+
+.poem.hidden {
+  display: none;
+}
