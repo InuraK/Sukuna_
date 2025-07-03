@@ -60,7 +60,7 @@ function showPoem() {
 // Typing Effect
 function startTyping() {
   const lines = [
-    "A Midnight Encounter\n",
+    "A Midnight Encounter (A poem just for you~♡)\n",
     "It started with a question\nin a quiet, glowing night—\na game, a stranger,\na simple ask for help,\nand fate whispered,\n“Watch this.”\n",
     "From strangers to friends,\nthen best of the best—\ndays blurred into joy,\nlaughs stitched into time,\nand suddenly,\nno one stood above you.\n",
     "You made my ordinary days feel seen.\nYou made the pixels feel like home.\nAnd somewhere between\nfriendly banter and silent stays,\nyou fell for me—\nand I, against the odds,\nfell too.\n",
