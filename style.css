@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #e0f7fa;
+  color: #333;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+#landing {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#heart {
+  font-size: 80px;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.hidden {
+  display: none;
+}
+
+#main-content {
+  padding: 2rem;
+  animation: fadeIn 3s ease-in;
+}
+
+.poem p {
+  margin: 1.5rem 0;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeText 2s ease forwards;
+}
+
+.poem p:nth-child(1) { animation-delay: 1s; }
+.poem p:nth-child(2) { animation-delay: 3s; }
+.poem p:nth-child(3) { animation-delay: 6s; }
+.poem p:nth-child(4) { animation-delay: 9s; }
+.poem p:nth-child(5) { animation-delay: 12s; }
+
+@keyframes fadeText {
+  to { opacity: 1; }
+}
+
+.images img {
+  width: 200px;
+  margin: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.end {
+  margin-top: 2rem;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
