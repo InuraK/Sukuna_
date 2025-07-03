@@ -3,7 +3,11 @@ document.getElementById('heart').addEventListener('click', () => {
   const main = document.getElementById('main-content');
   main.classList.remove('hidden');
 
-  // Play the music
   const audio = document.getElementById('birthday-audio');
   audio.play();
+});
+
+document.getElementById('show-poem').addEventListener('click', () => {
+  document.getElementById('birthday-message').style.display = 'none';
+  document.getElementById('poem-section').classList.remove('hidden');
 });
