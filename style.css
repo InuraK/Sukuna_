@@ -9,25 +9,12 @@ body {
   overflow: hidden;
 }
 
-/* Overlay background for readability */
-#main-content, #landing {
-  background-color: rgba(0, 0, 0, 0.4);
+/* Overlay for contrast */
+#landing, #main-content {
+  background-color: rgba(0,0,0,0.4);
   min-height: 100vh;
-  width: 100%;
   padding: 2rem;
   box-sizing: border-box;
-}
-
-#landing {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#landing h1 {
-  font-size: 1.8rem;
-  color: #ffffff;
 }
 
 #heart {
@@ -38,84 +25,38 @@ body {
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
+  0%,100% { transform: scale(1); }
   50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
 }
 
-.hidden {
-  display: none;
-}
+.hidden { display: none; }
 
-#birthday-message {
-  font-size: 1.1rem;
-  background: rgba(255, 255, 255, 0.15);
+#birthday-message, .poem {
+  background: rgba(255,255,255,0.15);
   border-radius: 15px;
   padding: 2rem;
-  margin: auto;
   max-width: 800px;
+  margin: 2rem auto;
   color: #fce4ec;
   animation: fadeInUp 1.5s ease-in;
 }
 
 #birthday-message h2 {
   font-size: 1.7rem;
-  color: #ffebee;
-}
-
-#birthday-message p {
-  line-height: 1.7;
-  margin-top: 1rem;
-  white-space: pre-wrap;
-}
-
-.poem {
-  font-size: 1.1rem;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 15px;
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 800px;
-  color: #fce4ec;
-  animation: fadeInUp 2s ease-in;
 }
 
 .poem p {
+  opacity: 0;
   margin: 1.5rem 0;
   line-height: 1.6;
-  opacity: 0;
   animation: fadeText 1.5s ease forwards;
 }
-
 .poem p:nth-child(1) { animation-delay: 0.5s; }
 .poem p:nth-child(2) { animation-delay: 2s; }
 .poem p:nth-child(3) { animation-delay: 4.5s; }
 .poem p:nth-child(4) { animation-delay: 7s; }
 .poem p:nth-child(5) { animation-delay: 9.5s; }
 
-.end {
-  margin-top: 2rem;
-  font-style: italic;
-  font-size: 1.1rem;
-  color: #ffe6f0;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeText {
-  to { opacity: 1; }
-}
-
-/* Falling Hearts */
 .heart-fall {
   position: fixed;
   top: -20px;
@@ -129,3 +70,9 @@ body {
   0% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(120vh); opacity: 0; }
 }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeText { to { opacity: 1; } }
