@@ -1,68 +1,91 @@
-// Heart click: show message, play music
-document.getElementById('heart').addEventListener('click', () => {
-  document.getElementById('landing').style.display = 'none';
-  const main = document.getElementById('main-content');
-  main.classList.remove('hidden');
+const landing = document.getElementById('landing');
+const mainContent = document.getElementById('main-content');
+const audio = document.getElementById('birthday-audio');
+const msg = document.getElementById('birthday-message');
+const poem = document.getElementById('poem-section');
 
-  // Music
-  const audio = document.getElementById('birthday-audio');
+landing.addEventListener('click', () => {
+  landing.style.display = 'none';
+  mainContent.classList.remove('hidden');
   audio.loop = true;
   audio.play();
-
-  // Start falling hearts
   setInterval(createHeart, 500);
 });
 
-// Real swipe effect
-let startX = 0;
-let isSwiping = false;
-
-const mainContent = document.getElementById('main-content');
-mainContent.addEventListener('touchstart', (e) => {
+// Swipe detection
+let startX = 0, swiping = false;
+mainContent.addEventListener('touchstart', e => {
+  swiping = true;
   startX = e.touches[0].clientX;
-  isSwiping = true;
 });
-
-mainContent.addEventListener('touchmove', (e) => {
-  if (!isSwiping) return;
-  const deltaX = e.touches[0].clientX - startX;
-  if (deltaX < -100) {
+mainContent.addEventListener('touchmove', e => {
+  if (swiping && e.touches[0].clientX - startX < -100) {
     showPoem();
-    isSwiping = false;
+    swiping = false;
   }
 });
 
-// Mouse drag swipe (desktop)
-mainContent.addEventListener('mousedown', (e) => {
+mainContent.addEventListener('mousedown', e => {
+  swiping = true;
   startX = e.clientX;
-  isSwiping = true;
 });
-
-mainContent.addEventListener('mousemove', (e) => {
-  if (!isSwiping) return;
-  const deltaX = e.clientX - startX;
-  if (deltaX < -100) {
+mainContent.addEventListener('mousemove', e => {
+  if (swiping && e.clientX - startX < -100) {
     showPoem();
-    isSwiping = false;
+    swiping = false;
   }
 });
+mainContent.addEventListener('mouseup', () => swiping = false);
+mainContent.addEventListener('mouseleave', () => swiping = false);
 
-mainContent.addEventListener('mouseup', () => isSwiping = false);
-mainContent.addEventListener('mouseleave', () => isSwiping = false);
-
-function showPoem() {
-  document.getElementById('birthday-message').style.display = 'none';
-  document.getElementById('poem-section').classList.remove('hidden');
-  document.getElementById('poem-section').scrollIntoView({ behavior: 'smooth' });
+// Falling hearts
+function createHeart() {
+  const h = document.createElement('div');
+  h.className = 'heart-fall';
+  h.textContent = '💖';
+  h.style.left = Math.random() * 100 + 'vw';
+  h.style.animationDuration = 2 + Math.random() * 3 + 's';
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 5000);
 }
 
-// Falling hearts animation
-function createHeart() {
-  const heart = document.createElement('div');
-  heart.classList.add('heart-fall');
-  heart.textContent = '💖';
-  heart.style.left = Math.random() * 100 + 'vw';
-  heart.style.animationDuration = (2 + Math.random() * 3) + 's';
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 5000);
+// Show poem and start typing
+function showPoem() {
+  msg.style.display = 'none';
+  poem.classList.remove('hidden');
+  poem.scrollIntoView({ behavior: 'smooth' });
+  startTyping();
+}
+
+// Typing effect
+function startTyping() {
+  const lines = [
+    "A Midnight Encounter\n",
+    "It started with a question\nin a quiet, glowing night—\na game, a stranger,\na simple ask for help,\nand fate whispered,\n“Watch this.”\n",
+    "From strangers to friends,\nthen best of the best—\ndays blurred into joy,\nlaughs stitched into time,\nand suddenly,\nno one stood above you.\n",
+    "You made my ordinary days feel seen.\nYou made the pixels feel like home.\nAnd somewhere between\nfriendly banter and silent stays,\nyou fell for me—\nand I, against the odds,\nfell too.\n",
+    "We’ve had our storms,\nthe highs and the aches,\nbut still, you remain—\nin every moment my heart takes.\n",
+    "If there’s one thing I know,\nit’s this:\nyou are the kindest chapter\nmy heart has ever held.\nAnd no matter where time leads us,\nyou’ll always be\na chapter I’ll reread in my heart forever.\n",
+    "— from the girl who still smiles when she thinks of you."
+  ];
+
+  const poemContainer = document.getElementById('poem-section');
+  poemContainer.innerHTML = ''; // clear
+
+  lines.forEach((line, i) => {
+    const p = document.createElement('p');
+    poemContainer.appendChild(p);
+    typeLine(p, line, i * 3000); // delay between lines
+  });
+}
+
+function typeLine(el, text, delay = 0) {
+  let i = 0;
+  setTimeout(() => {
+    const interval = setInterval(() => {
+      el.textContent += text.charAt(i);
+      i++;
+      if (i >= text.length) clearInterval(interval);
+    }, 30);
+  }, delay);
 }
