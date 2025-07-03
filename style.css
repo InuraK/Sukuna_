@@ -114,3 +114,19 @@ html, body {
     font-size: 60px;
   }
 }
+.ending-note {
+  margin-top: 3rem;
+  font-style: italic;
+  color: #fcdde3;
+  font-size: 1rem;
+  opacity: 0;
+  animation: fadeInNote 2s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeInNote {
+  to {
+    opacity: 1;
+  }
+}
+
