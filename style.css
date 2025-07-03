@@ -215,4 +215,21 @@ html, body {
   font-size: 1.1rem;
   animation: fadeIn 1s ease;
 }
+.confetti {
+  position: fixed;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: confetti-fall linear forwards;
+  z-index: 9999;
+  opacity: 1;
+}
+
+@keyframes confetti-fall {
+  to {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
 
