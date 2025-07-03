@@ -49,7 +49,7 @@ function createHeart() {
   setTimeout(() => h.remove(), 5000);
 }
 
-// Show poem and start typing
+// Show poem section and type it
 function showPoem() {
   msg.style.display = 'none';
   poem.classList.remove('hidden');
@@ -57,7 +57,7 @@ function showPoem() {
   startTyping();
 }
 
-// Typing effect
+// Typing Effect
 function startTyping() {
   const lines = [
     "A Midnight Encounter\n",
@@ -69,13 +69,13 @@ function startTyping() {
     "— from the girl who still smiles when she thinks of you."
   ];
 
-  const poemContainer = document.getElementById('poem-section');
-  poemContainer.innerHTML = ''; // clear
+  poem.innerHTML = ''; // Clear old content
 
   lines.forEach((line, i) => {
     const p = document.createElement('p');
-    poemContainer.appendChild(p);
-    typeLine(p, line, i * 3000); // delay between lines
+    p.classList.add('typing');
+    poem.appendChild(p);
+    typeLine(p, line, i * 3000);
   });
 }
 
