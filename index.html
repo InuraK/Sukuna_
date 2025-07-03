@@ -38,6 +38,29 @@
     <!-- Poem Section (Typed dynamically via JS) -->
     <div class="poem hidden" id="poem-section"></div>
   </div>
+    <!-- Open When Letters -->
+<div class="open-when-section hidden" id="open-when">
+  <h2>💌 Open When...</h2>
+  <div class="letter-grid">
+    <div class="letter" onclick="toggleLetter('sad')">🕯️ You're Sad</div>
+    <div class="letter" onclick="toggleLetter('miss')">💤 You Miss Me</div>
+    <div class="letter" onclick="toggleLetter('bad')">🌧️ Bad Day</div>
+    <div class="letter" onclick="toggleLetter('love')">🌸 Want to Feel Loved</div>
+  </div>
+
+  <div class="letter-message hidden" id="msg-sad">
+    <p>Hey... it’s okay to feel low sometimes. Just know that I’m here, always — even when I’m silent. I’m sending you a soft hug from my heart to yours 🤍</p>
+  </div>
+  <div class="letter-message hidden" id="msg-miss">
+    <p>If you're missing me, then I'm probably thinking about you too. Remember — we’re connected by more than just messages. We're connected by meaning.</p>
+  </div>
+  <div class="letter-message hidden" id="msg-bad">
+    <p>Rough days pass, but you stay constant — kind, strong, and loved. You’ve made it through every bad day before, and I believe in you every time.</p>
+  </div>
+  <div class="letter-message hidden" id="msg-love">
+    <p>You’re loved. So much. Maybe more than you even realize. You’re someone’s reason to smile — mine.</p>
+  </div>
+</div>
 
   <!-- Script -->
   <script src="script.js"></script>
