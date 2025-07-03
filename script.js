@@ -1,9 +1,12 @@
+// Get DOM elements
 const landing = document.getElementById('landing');
 const mainContent = document.getElementById('main-content');
 const audio = document.getElementById('birthday-audio');
 const msg = document.getElementById('birthday-message');
 const poem = document.getElementById('poem-section');
+const openWhen = document.getElementById('open-when');
 
+// Start site after clicking the heart
 landing.addEventListener('click', () => {
   landing.style.display = 'none';
   mainContent.classList.remove('hidden');
@@ -12,7 +15,7 @@ landing.addEventListener('click', () => {
   setInterval(createHeart, 500);
 });
 
-// Swipe detection
+// Swipe detection for showing poem
 let startX = 0, swiping = false;
 mainContent.addEventListener('touchstart', e => {
   swiping = true;
@@ -38,7 +41,7 @@ mainContent.addEventListener('mousemove', e => {
 mainContent.addEventListener('mouseup', () => swiping = false);
 mainContent.addEventListener('mouseleave', () => swiping = false);
 
-// Falling hearts
+// Falling heart animation
 function createHeart() {
   const h = document.createElement('div');
   h.className = 'heart-fall';
@@ -49,18 +52,24 @@ function createHeart() {
   setTimeout(() => h.remove(), 5000);
 }
 
-// Show poem section and type it
+// Show poem and start typing
 function showPoem() {
   msg.style.display = 'none';
   poem.classList.remove('hidden');
   poem.scrollIntoView({ behavior: 'smooth' });
   startTyping();
+
+  // Show Open When section after 10 seconds
+  setTimeout(() => {
+    openWhen.classList.remove('hidden');
+    openWhen.scrollIntoView({ behavior: 'smooth' });
+  }, 10000);
 }
 
-// Typing Effect
+// Typing animation for poem
 function startTyping() {
   const lines = [
-    "A Midnight Encounter (A poem just for you~♡)\n",
+    "A Midnight Encounter\n",
     "It started with a question\nin a quiet, glowing night—\na game, a stranger,\na simple ask for help,\nand fate whispered,\n“Watch this.”\n",
     "From strangers to friends,\nthen best of the best—\ndays blurred into joy,\nlaughs stitched into time,\nand suddenly,\nno one stood above you.\n",
     "You made my ordinary days feel seen.\nYou made the pixels feel like home.\nAnd somewhere between\nfriendly banter and silent stays,\nyou fell for me—\nand I, against the odds,\nfell too.\n",
@@ -68,7 +77,7 @@ function startTyping() {
     "If there’s one thing I know,\nit’s this:\nyou are the kindest chapter\nmy heart has ever held.\nAnd no matter where time leads us,\nyou’ll always be\na chapter I’ll reread in my heart forever.\n"
   ];
 
-  poem.innerHTML = ''; // Clear existing
+  poem.innerHTML = ''; // clear poem container
 
   lines.forEach((line, i) => {
     const p = document.createElement('p');
@@ -77,16 +86,17 @@ function startTyping() {
     typeLine(p, line, i * 3000);
   });
 
-  // Add the final soft note after the last line
+  // Add final soft note
   setTimeout(() => {
     const note = document.createElement('div');
     note.className = 'ending-note';
     note.textContent = '— from the girl who still smiles when she thinks of you.';
     poem.appendChild(note);
     note.scrollIntoView({ behavior: 'smooth' });
-  }, lines.length * 3000 + 1500); // show after last line
+  }, lines.length * 3000 + 1500);
 }
 
+// Typing line by line
 function typeLine(el, text, delay = 0) {
   let i = 0;
   setTimeout(() => {
@@ -96,4 +106,14 @@ function typeLine(el, text, delay = 0) {
       if (i >= text.length) clearInterval(interval);
     }, 30);
   }, delay);
+}
+
+// Toggle Open When letters
+function toggleLetter(type) {
+  const allMessages = document.querySelectorAll('.letter-message');
+  allMessages.forEach(msg => msg.classList.add('hidden'));
+
+  const selected = document.getElementById(`msg-${type}`);
+  selected.classList.remove('hidden');
+  selected.scrollIntoView({ behavior: 'smooth' });
 }
