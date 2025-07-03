@@ -2,19 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sukuna - Happy 19!</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- Intro Heart Click Screen -->
   <div id="landing">
     <h1>Now click on this (heart) Kiddo ^-^</h1>
     <div id="heart">&#10084;</div>
   </div>
 
+  <!-- Main Content -->
   <div id="main-content" class="hidden">
+    <!-- Background music -->
     <audio id="birthday-audio" src="aud (1).mp3"></audio>
 
+    <!-- Birthday Message -->
     <div class="message" id="birthday-message">
       <h2>Happiest Of Birthdays Sukuniiiiiii~</h2>
       <p>
@@ -30,58 +35,11 @@
       </p>
     </div>
 
-    <div class="poem hidden" id="poem-section">
-      <p><strong>A Midnight Encounter</strong></p>
-      <p>
-        It started with a question<br>
-        in a quiet, glowing night—<br>
-        a game, a stranger,<br>
-        a simple ask for help,<br>
-        and fate whispered,<br>
-        “Watch this.”
-      </p>
-
-      <p>
-        From strangers to friends,<br>
-        then best of the best—<br>
-        days blurred into joy,<br>
-        laughs stitched into time,<br>
-        and suddenly,<br>
-        no one stood above you.
-      </p>
-
-      <p>
-        You made my ordinary days feel seen.<br>
-        You made the pixels feel like home.<br>
-        And somewhere between<br>
-        friendly banter and silent stays,<br>
-        you fell for me—<br>
-        and I, against the odds,<br>
-        fell too.
-      </p>
-
-      <p>
-        We’ve had our storms,<br>
-        the highs and the aches,<br>
-        but still, you remain—<br>
-        in every moment my heart takes.
-      </p>
-
-      <p>
-        If there’s one thing I know,<br>
-        it’s this:<br>
-        you are the kindest chapter<br>
-        my heart has ever held.<br>
-        And no matter where time leads us,<br>
-        you’ll always be<br>
-        a chapter I’ll reread in my heart forever.
-      </p>
-      <div class="end">
-        — from the girl who still smiles when she thinks of you.
-      </div>
-    </div>
+    <!-- Poem Section (Typed dynamically via JS) -->
+    <div class="poem hidden" id="poem-section"></div>
   </div>
 
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
