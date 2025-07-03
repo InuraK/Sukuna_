@@ -117,3 +117,22 @@ function toggleLetter(type) {
   selected.classList.remove('hidden');
   selected.scrollIntoView({ behavior: 'smooth' });
 }
+function openGift() {
+  const box = document.querySelector('.gift-box');
+  const message = document.getElementById('gift-message');
+
+  box.style.display = 'none';
+  message.classList.remove('hidden');
+  message.scrollIntoView({ behavior: 'smooth' });
+
+  // Optional: confetti burst
+  for (let i = 0; i < 100; i++) {
+    const confetti = document.createElement('div');
+    confetti.className = 'confetti';
+    confetti.style.left = Math.random() * 100 + 'vw';
+    confetti.style.animationDuration = 1 + Math.random() * 2 + 's';
+    confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+    document.body.appendChild(confetti);
+    setTimeout(() => confetti.remove(), 3000);
+  }
+}
