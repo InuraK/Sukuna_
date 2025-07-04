@@ -107,7 +107,7 @@ function openLetter(type) {
   let text = '';
   switch(type) {
     case 'sad':
-      text = "It's okay to feel sad sometimes. Just remember, Your inuri is always by your side, cheering for you silently huihui. One deep breath at a time, alright? This feeling will pass, I promise." 💙";
+      text = "It's okay to feel sad sometimes. Just remember, Your inuri is always by your side, cheering for you silently huihui. One deep breath at a time, alright? This feeling will pass, I promise.💙";
       break;
     case 'miss':
       text = "Missing me awww? Here’s a hug through the screen 🤗. You're in my heart, even when we’re not talking. Close your eyes — I’m probably thinking of you too.";
