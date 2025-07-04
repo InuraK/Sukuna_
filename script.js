@@ -65,11 +65,10 @@ function startTyping() {
     "From strangers to friends,\nthen best of the best—\ndays blurred into joy,\nlaughs stitched into time,\nand suddenly,\nno one stood above you.\n",
     "You made my ordinary days feel seen.\nYou made the pixels feel like home.\nAnd somewhere between\nfriendly banter and silent stays,\nyou fell for me—\nand I, against the odds,\nfell too.\n",
     "We’ve had our storms,\nthe highs and the aches,\nbut still, you remain—\nin every moment my heart takes.\n",
-    "If there’s one thing I know,\nit’s this:\nyou are the kindest chapter\nmy heart has ever held.\nAnd no matter where time leads us,\nyou’ll always be\na chapter I’ll reread in my heart forever.\n",
-    "— from the girl who still smiles when she thinks of you."
+    "If there’s one thing I know,\nit’s this:\nyou are the kindest chapter\nmy heart has ever held.\nAnd no matter where time leads us,\nyou’ll always be\na chapter I’ll reread in my heart forever.\n"
   ];
 
-  poem.innerHTML = ''; // Clear old content
+  poem.innerHTML = ''; // Clear existing
 
   lines.forEach((line, i) => {
     const p = document.createElement('p');
@@ -77,6 +76,15 @@ function startTyping() {
     poem.appendChild(p);
     typeLine(p, line, i * 3000);
   });
+
+  // Add the final soft note after the last line
+  setTimeout(() => {
+    const note = document.createElement('div');
+    note.className = 'ending-note';
+    note.textContent = '— from the girl who still smiles when she thinks of you.';
+    poem.appendChild(note);
+    note.scrollIntoView({ behavior: 'smooth' });
+  }, lines.length * 3000 + 1500); // show after last line
 }
 
 function typeLine(el, text, delay = 0) {
