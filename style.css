@@ -190,3 +190,68 @@ html, body {
   color: white;
   cursor: pointer;
 }
+.memories-title {
+  text-align: center;
+  color: #ffe4f2;
+  font-size: 2rem;
+  margin-top: 3rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.memories-title:hover {
+  transform: scale(1.05);
+  color: #ffccdd;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  padding: 2rem 1rem;
+  animation: fadeInGallery 2s ease forwards;
+}
+
+.memory-set {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.memory-set img {
+  width: 200px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(0);
+  animation: spreadImage 0.5s forwards ease-in-out;
+}
+
+.memory-set img:nth-child(1) { animation-delay: 0.1s; }
+.memory-set img:nth-child(2) { animation-delay: 0.2s; }
+.memory-set img:nth-child(3) { animation-delay: 0.3s; }
+.memory-set img:nth-child(4) { animation-delay: 0.4s; }
+
+.memory-caption {
+  margin-top: 1rem;
+  color: #fdd6f0;
+  font-style: italic;
+  text-align: center;
+  max-width: 500px;
+  font-size: 1rem;
+  animation: fadeInNote 2s ease forwards;
+}
+
+@keyframes spreadImage {
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInGallery {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
