@@ -145,3 +145,8 @@ function openLetter(type) {
 function closeLetter() {
   document.getElementById('letter-box').classList.add('hidden');
 }
+function showMemories() {
+  const gallery = document.getElementById('memory-gallery');
+  gallery.classList.remove('hidden');
+  gallery.scrollIntoView({ behavior: 'smooth' });
+}
