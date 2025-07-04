@@ -150,3 +150,28 @@ function showMemories() {
   gallery.classList.remove('hidden');
   gallery.scrollIntoView({ behavior: 'smooth' });
 }
+function openGift() {
+  // Hide the gift icon
+  document.getElementById('gift-box').style.display = 'none';
+
+  // Trigger confetti (optional fallback)
+  confetti();
+
+  // Show the message
+  document.getElementById('gift-message').classList.remove('hidden');
+}
+
+function revealNightSky() {
+  // Hide everything else
+  document.body.style.transition = 'opacity 1s';
+  document.body.style.opacity = '0';
+
+  setTimeout(() => {
+    document.body.innerHTML = ''; // clears everything
+
+    // Then show night sky
+    document.body.appendChild(document.getElementById('night-sky'));
+    document.getElementById('night-sky').classList.remove('hidden');
+    document.body.style.opacity = '1';
+  }, 1000);
+}
