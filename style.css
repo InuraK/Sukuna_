@@ -255,3 +255,89 @@ html, body {
   from { opacity: 0; transform: translateY(50px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* 🎁 Floating Gift Box */
+#gift-box {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1000;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* 🎉 Gift Message Box */
+#gift-message {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  z-index: 999;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.3);
+  font-size: 1.2rem;
+}
+
+#gift-message button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #ff77aa;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 🌌 Starry Night Background */
+#night-sky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(#000022, #000000);
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: fadeInNight 2s ease-in forwards;
+}
+
+@keyframes fadeInNight {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.stars {
+  width: 100%;
+  height: 100%;
+  background: transparent url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif') repeat;
+  opacity: 0.2;
+  position: absolute;
+  z-index: 0;
+}
+
+.night-quote {
+  color: #f0f8ff;
+  font-size: 1.5rem;
+  max-width: 600px;
+  text-align: center;
+  padding: 2rem;
+  z-index: 1;
+  animation: fadeInText 2s ease 1s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInText {
+  to { opacity: 1; }
+}
