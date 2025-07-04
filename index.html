@@ -90,22 +90,21 @@
 
   <!-- Script -->
   <script src="script.js"></script>
-  <!-- 🎁 Gift Box Floating -->
-<div id="gift-box" onclick="openGift()">
-  🎁
-</div>
+  <!-- 🎁 Gift Box -->
+<div id="gift-box" class="hidden" onclick="openGift()">🎁</div>
 
-<!-- 🎉 Surprise Message -->
+<!-- 💬 Gift Message -->
 <div id="gift-message" class="hidden">
   <p>This site is my gift to you, Kiddo.</p>
-  <button onclick="revealNightSky()">See the Surprise</button>
+  <button onclick="revealNightSky()">Click Me</button>
 </div>
 
-<!-- 🌌 Starry Night Surprise -->
+<!-- 🌌 Night Sky -->
 <div id="night-sky" class="hidden">
   <div class="stars"></div>
   <p class="night-quote">“The universe conspired to make our paths cross — and I’m thankful every night.”</p>
 </div>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <!-- Confetti Library -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </body>
 </html>
