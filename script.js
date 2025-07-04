@@ -107,35 +107,35 @@ function openLetter(type) {
   let text = '';
   switch(type) {
     case 'sad':
-      text = "It's okay to feel sad sometimes. Just remember, I'm always here for you, cheering for you silently. Take a deep breath — this too shall pass 💙";
+      text = "It's okay to feel sad sometimes. Just remember, Your inuri is always by your side, cheering for you silently huihui. One deep breath at a time, alright? This feeling will pass, I promise." 💙";
       break;
     case 'miss':
-      text = "Missing me? Here’s a hug through the screen 🤗💌 You're in my heart, even when we’re not talking. Close your eyes — I’m probably thinking of you too.";
+      text = "Missing me awww? Here’s a hug through the screen 🤗. You're in my heart, even when we’re not talking. Close your eyes — I’m probably thinking of you too.";
       break;
     case 'need-love':
-      text = "Here’s your reminder: You are loved. Deeply. Unconditionally. Always. And not just by anyone — by me 💕";
+      text = "Here’s your reminder: You are loved. Deeply. Unconditionally. Always. And not just by anyone — by me (you get that?)💕";
       break;
     case 'random':
-      text = "SURPRISE! This page secretly adores you. And hey — did you know you're really cute when you smile reading this?";
+      text = "SURPRISE! This page secretly adores you. And hey, did you know you're really cute when you smile reading this? (Cutie u.u)";
       break;
     case 'virtual-hug':
-      text = "Come here, kiddo 🤗💙\n\nClose your eyes for a second.\nNow imagine my arms wrapped around you — tight, warm, safe.\nThe world can be heavy sometimes, I know…\nBut I’m right here.\nAlways just a thought away.\n\nYou’re not alone.\nYou’re so loved.\nAnd I’m so proud of you — for all that you are, and all that you’re becoming.\n\n*Hug delivered.*\nNow breathe in. And let go of a little bit of that weight.\n\nYou're doing better than you think, meri jaan. 💫";
+      text = "Come here, kiddo 🤗💙\n\nClose your eyes for a second.\nNow imagine my arms wrapped around you — tightlyyy, warm, safe.\nThe world can be heavy sometimes, I know…\nBut I’m right here.\nAlways just a thought away.\n\nYou’re not alone.\nNo negativity of this world can harm you.\nAnd I’m so proud of you — for all that you are, and all that you’re becoming.\n\n*Hug delivered.*\nNow breathe in. And let go of a little bit of that weight.\n\nYou're doing better than you think, My Hubby. 💫";
       break;
 
     case 'cant-sleep':
-      text = "Close your eyes, breathe slow. Imagine I’m whispering goodnight to you. You're safe, you're loved — and I’m here, always 💤💙";
+      text = "Close your eyes, breathe slow. Imagine I’m whispering goodnight to you. *a forehead goodnight kiss* You're safe, you're loved — and I’m here, always 💤💙";
       break;
 
     case 'need-laugh':
-      text = "Knock knock! Who’s there? You. You who? You whooooo~ you're the cutest person reading this 😄💫";
+      text = "Knock knock! Who’s there? You. You who? You whooooo~ you're the cutest person reading this (Cutie again T-T dbhcgfucdjnbchd) but you are dumb, idiot, buddha, gadha, jahil, kabadi, ratman, nightmare,halwe, khamba, kiddo but still cute.💫";
       break;
 
     case 'bored':
-      text = "If you’re bored, go reread the poem and pretend it’s a dramatic anime confession. Or just text me, I’ll drop chaos 😈💌";
+      text = "If you’re bored, go reread the poem and pretend it’s a dramatic anime confession. Or just text me, idiot ye bhi batana padega. Okay, now go text me hurrr. Or maybe send me your voice notes -.-'";
       break;
 
     case 'just-because':
-      text = "No reason. No moment. Just a little reminder: you matter. You make my world brighter by simply being you. 💞";
+      text = "No reason. No moment. Just a little reminder: you matter.You are not replaceable, not forgettable. You are my favourite person— just thought you should know that.💞";
       break;
 
   }
