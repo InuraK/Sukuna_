@@ -85,6 +85,7 @@ function startTyping() {
     poem.appendChild(note);
     document.getElementById('open-when-section').classList.remove('hidden');
     note.scrollIntoView({ behavior: 'smooth' });
+    showGiftBox();
   }, lines.length * 5000 + 1500); // show after last line
 }
 
@@ -153,4 +154,36 @@ function revealMemories() {
 function hideMemories() {
   document.getElementById('memories-gallery').classList.add('hidden');
   document.getElementById('show-memories').classList.remove('hidden');
+}
+// Show gift box after poem appears
+function showGiftBox() {
+  document.getElementById('gift-box').classList.remove('hidden');
+}
+
+// Trigger gift message box
+function revealGiftMessage() {
+  document.getElementById('gift-message-box').classList.remove('hidden');
+}
+
+// Fade into starry night scene
+function startStarScene() {
+  document.getElementById('main-content').classList.add('fade-out');
+
+  setTimeout(() => {
+    document.body.style.backgroundImage = "url('star.jpg')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.getElementById('main-content').innerHTML = `
+      <div class="star-quote">
+        <p>“The universe conspired to make our paths cross — and I’m thankful every night.”</p>
+        <button onclick="goBackHome()">Go Back</button>
+      </div>
+    `;
+  }, 2000);
+}
+
+// Go back to heart screen
+function goBackHome() {
+  location.reload(); // simple reload to reset everything
 }
