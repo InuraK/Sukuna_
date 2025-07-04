@@ -182,13 +182,6 @@ function startStarScene() {
 
 // Go back to heart screen
 function goBackHome() {
-  // Hide quote section
-  document.getElementById('main-content').classList.add('hidden');
-
-  // Show the heart screen again
-  document.getElementById('heart-screen').classList.remove('hidden');
-
-  // Optional: Reload everything fresh (uncomment if needed)
-  // location.reload();
+  location.reload();
 }
 
