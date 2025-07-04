@@ -165,3 +165,19 @@ function returnToHeart() {
   document.getElementById('heart-screen').classList.remove('hidden');
   document.getElementById('bg-music').pause();
 }
+// Show gift box when poem typing ends
+function showGiftBox() {
+  document.getElementById('gift-box').classList.remove('hidden');
+}
+
+// Trigger gift message
+function openGift() {
+  document.getElementById('gift-message').classList.remove('hidden');
+}
+
+// Fade to starry background
+function fadeToStars() {
+  document.getElementById('gift-message').classList.add('hidden');
+  document.getElementById('main-content').classList.add('hidden');
+  showStarryMessage();
+}
