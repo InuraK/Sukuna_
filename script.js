@@ -170,22 +170,18 @@ function startStarScene() {
   document.getElementById('main-content').classList.add('fade-out');
 
   setTimeout(() => {
-    // Fade in star background via pixel animation
-    const starLayer = document.getElementById('star-transition');
-    starLayer.classList.remove('hidden');
-
-    setTimeout(() => {
-      document.getElementById('main-content').innerHTML = `
-        <div class="star-quote">
-          <p>“The universe conspired to make our paths cross — and I’m thankful every night.”</p>
-          <button onclick="goBackHome()">Go Back</button>
-        </div>
-      `;
-    }, 5000); // after pixel animation ends
-  }, 2000); // wait for main to fade out
+    document.getElementById('main-content').innerHTML = `
+      <div class="star-quote">
+        <p>“The universe conspired to make our paths cross — and I’m thankful every night.”</p>
+        <button onclick="goBackHome()">Go Back</button>
+      </div>
+    `;
+    document.getElementById('main-content').classList.remove('fade-out');
+  }, 2000);
 }
 
 // Go back to heart screen
 function goBackHome() {
-  location.reload(); // simple reload to reset everything
+  document.getElementById('main-content').classList.add('hidden');
+  document.getElementById('heart-screen').classList.remove('hidden');
 }
