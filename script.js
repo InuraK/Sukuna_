@@ -154,3 +154,14 @@ function hideMemories() {
   document.getElementById('memories-gallery').classList.add('hidden');
   document.getElementById('show-memories').classList.remove('hidden');
 }
+function showStarryMessage() {
+  const overlay = document.getElementById('starry-message');
+  overlay.classList.add('visible');
+}
+
+function returnToHeart() {
+  document.getElementById('starry-message').classList.remove('visible');
+  document.getElementById('main-content').classList.add('hidden');
+  document.getElementById('heart-screen').classList.remove('hidden');
+  document.getElementById('bg-music').pause();
+}
