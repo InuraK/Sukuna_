@@ -37,6 +37,20 @@
 
     <!-- Poem Section (Typed dynamically via JS) -->
     <div class="poem hidden" id="poem-section"></div>
+    <!-- Open When Section -->
+<div id="open-when-section" class="hidden">
+  <h2>Open When...</h2>
+  <div class="envelopes">
+    <div class="envelope" onclick="openLetter('sad')">You're feeling sad</div>
+    <div class="envelope" onclick="openLetter('miss')">You miss me</div>
+    <div class="envelope" onclick="openLetter('need-love')">You need love</div>
+    <div class="envelope" onclick="openLetter('random')">You want a surprise</div>
+  </div>
+  <div id="letter-box" class="letter-box hidden">
+    <p id="letter-content"></p>
+    <button onclick="closeLetter()">Close</button>
+  </div>
+</div>
   </div>
 
   <!-- Script -->
