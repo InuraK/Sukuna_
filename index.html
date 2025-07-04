@@ -2,77 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sukuna - Happy 19!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Sukuna</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Intro Heart Click Screen -->
+  <!-- Landing Section -->
   <div id="landing">
-    <h1>Click Me Kiddo ^-^</h1>
-    <div id="heart">&#10084;</div>
+    <div id="heart-btn" onclick="startExperience()">❤️</div>
+    <p>Now click on this (heart) Kiddo ^-^</p>
   </div>
 
-  <!-- Main Content -->
-  <div id="main-content" class="hidden">
-    <!-- Background music -->
-    <audio id="birthday-audio" src="aud (1).mp3"></audio>
+  <!-- Birthday Message -->
+  <div id="birthday-msg" class="hidden">
+    <p>
+      Happiest Of Birthdays Sukuniiiiiii~ Happy 19 Hubbyyy ^-^... Welp, I don't know what to say T-T and at the same time I feel like I have so many things to say to you...<br><br>
+      Anyways, I wish my kiddo a happy happy birthday... finally 16 days ke liye mujhse bada ho gya, so you are a legit buddha for 16 days, accept it -.-<br><br>
+      Adding to this, I wish Allah to grant you all the success, happiness and good health in your life. (Happiness ke liye mai to hu hi u.u)<br><br>
+      Though ik I sometimes makes you hurt and sad... And I am sorry for that T-T...<br><br>
+      Idk birthday pr perfectly wish kaise krte but mere dimaag me jo bhi aaya vo sab bol diya...-.-<br><br>
+      Lastly, I love you so so muchhh meri jaan and once again Happiest Of Birthdays to the best person I know... mwahhh~
+    </p>
+  </div>
 
-    <!-- Birthday Message -->
-    <div class="message" id="birthday-message">
-      <h2>Happiest Of Birthdays Sukuniiiiiii~</h2>
-      <p>
-        Happy 19 Hubbyyy ^-^... Welp, I don't know what to say T-T and at the same time I feel like I have so many things to say to you...<br><br>
-        Anyways, I wish my kiddo a happy happy birthday... finally 16 days ke liye mujhse bada ho gya, so you are a legit buddha for 16 days, accept it -.-...<br><br>
-        Adding to this, I wish Allah to grant you all the success, happiness and good health in your life. (Happiness ke liye mai to hu hi u.u)<br><br>
-        Though ik I sometimes makes you hurt and sad... And I am sorry for that T-T...<br><br>
-        Idk birthday pr perfectly wish kaise krte but mere dimaag me jo bhi aaya vo sab bol diya...-.-<br><br>
-        Lastly, I love you so so muchhh meri jaan and once again Happiest Of Birthdays to the best person I know...mwahhh~
-      </p>
-      <p style="margin-top: 2rem; font-size: 0.9rem; color: #eee;">
-        (Swipe left to read the poem ↔)
-      </p>
+  <!-- Poem Section -->
+  <div class="poem hidden" id="poem-section"></div>
+
+  <!-- Ending Line -->
+  <div class="ending-note hidden" id="ending-line">
+    — from the girl who still smiles when she thinks of you.
+  </div>
+
+  <!-- Divider -->
+  <hr />
+
+  <!-- Open When Letters -->
+  <div class="open-when-section hidden" id="open-when">
+    <h2>💌 Open When...</h2>
+    <div class="letter-grid">
+      <div class="letter" onclick="toggleLetter('sad')">🕯 You're Sad</div>
+      <div class="letter" onclick="toggleLetter('miss')">💤 You Miss Me</div>
+      <div class="letter" onclick="toggleLetter('bad')">🌧 Bad Day</div>
+      <div class="letter" onclick="toggleLetter('love')">🌸 Want to Feel Loved</div>
     </div>
 
-    <!-- Poem Section (Typed dynamically via JS) -->
-    <div class="poem hidden" id="poem-section"></div>
-  </div>
-    <!-- Open When Letters -->
-<div class="open-when-section hidden" id="open-when">
-  <h2>💌 Open When...</h2>
-  <div class="letter-grid">
-    <div class="letter" onclick="toggleLetter('sad')">🕯️ You're Sad</div>
-    <div class="letter" onclick="toggleLetter('miss')">💤 You Miss Me</div>
-    <div class="letter" onclick="toggleLetter('bad')">🌧️ Bad Day</div>
-    <div class="letter" onclick="toggleLetter('love')">🌸 Want to Feel Loved</div>
+    <div class="letter-message hidden" id="msg-sad">
+      <p>Hey… it’s okay to feel low sometimes. Just know that I’m here, always – even when I’m silent. I’m sending you a soft hug from afar.</p>
+    </div>
+    <div class="letter-message hidden" id="msg-miss">
+      <p>If you’re missing me, then I’m probably thinking about you too. Remember – we’re connected by more than just messages. We’re connected by heart.</p>
+    </div>
+    <div class="letter-message hidden" id="msg-bad">
+      <p>Rough days pass, but you stay constant – kind, strong, and loved. You’ve made it through every bad day before, and I believe in you every time.</p>
+    </div>
+    <div class="letter-message hidden" id="msg-love">
+      <p>You’re loved. So much. Maybe more than you even realize. You’re someone’s reason to smile – mine. 💖</p>
+    </div>
   </div>
 
-  <div class="letter-message hidden" id="msg-sad">
-    <p>Hey... it’s okay to feel low sometimes. Just know that I’m here, always — even when I’m silent. I’m sending you a soft hug from my heart to yours 🤍</p>
-  </div>
-  <div class="letter-message hidden" id="msg-miss">
-    <p>If you're missing me, then I'm probably thinking about you too. Remember — we’re connected by more than just messages. We're connected by meaning.</p>
-  </div>
-  <div class="letter-message hidden" id="msg-bad">
-    <p>Rough days pass, but you stay constant — kind, strong, and loved. You’ve made it through every bad day before, and I believe in you every time.</p>
-  </div>
-  <div class="letter-message hidden" id="msg-love">
-    <p>You’re loved. So much. Maybe more than you even realize. You’re someone’s reason to smile — mine.</p>
-  </div>
-</div>
   <!-- Gift Box Surprise -->
-<div id="gift-section" class="hidden">
-  <div class="gift-box" onclick="openGift()">
-    🎁
+  <div id="gift-section" class="hidden">
+    <div class="gift-box" onclick="openGift()">🎁</div>
+    <div class="gift-message hidden" id="gift-message">
+      <h3>🎉 Surprise!</h3>
+      <p>This website is my gift to you... handmade with love 💙</p>
+    </div>
   </div>
-  <div class="gift-message hidden" id="gift-message">
-    <h3>🎉 Surprise!</h3>
-    <p>This website is my gift to you... handmade with love 💙</p>
-  </div>
-</div>
 
-  <!-- Script -->
+  <!-- Audio -->
+  <audio id="bg-music" src="aud(1).mp3" loop></audio>
+
   <script src="script.js"></script>
 </body>
 </html>
