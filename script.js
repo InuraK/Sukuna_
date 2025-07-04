@@ -94,6 +94,6 @@ function typeLine(el, text, delay = 0) {
       el.textContent += text.charAt(i);
       i++;
       if (i >= text.length) clearInterval(interval);
-    }, 30);
+    }, 70);
   }, delay);
 }
