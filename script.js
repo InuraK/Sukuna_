@@ -74,7 +74,7 @@ function startTyping() {
     const p = document.createElement('p');
     p.classList.add('typing');
     poem.appendChild(p);
-    typeLine(p, line, i * 3000);
+    typeLine(p, line, i * 5000);
   });
 
   // Add the final soft note after the last line
