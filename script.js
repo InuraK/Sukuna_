@@ -1,138 +1,89 @@
-// Get DOM elements
-const landing = document.getElementById('landing');
-const mainContent = document.getElementById('main-content');
-const audio = document.getElementById('birthday-audio');
-const msg = document.getElementById('birthday-message');
-const poem = document.getElementById('poem-section');
-const openWhen = document.getElementById('open-when');
+const poemLines = [
+  "A Midnight Encounter\n",
+  "\nIt started with a question",
+  "in a quiet, glowing night—",
+  "a game, a stranger,",
+  "a simple ask for help,",
+  "and fate whispered,",
+  "“Watch this.”",
+  "\nFrom strangers to friends,",
+  "then best of the best—",
+  "days blurred into joy,",
+  "laughs stitched into time,",
+  "and suddenly,",
+  "no one stood above you.",
+  "\nYou made my ordinary days feel seen.",
+  "You made the pixels feel like home.",
+  "And somewhere between",
+  "friendly banter and silent stays,",
+  "you fell for me—",
+  "and I, against the odds,",
+  "fell too.",
+  "\nWe’ve had our storms,",
+  "the highs and the aches,",
+  "but still, you remain—",
+  "in every moment my heart takes.",
+  "\nIf there’s one thing I know,",
+  "it’s this:",
+  "you are the kindest chapter",
+  "my heart has ever held.",
+  "And no matter where time leads us,",
+  "you’ll always be",
+  "a chapter I’ll reread in my heart forever."
+];
 
-// Start site after clicking the heart
-landing.addEventListener('click', () => {
-  landing.style.display = 'none';
-  mainContent.classList.remove('hidden');
-  audio.loop = true;
-  audio.play();
-  setInterval(createHeart, 500);
-});
+function startExperience() {
+  document.getElementById("landing").classList.add("hidden");
+  document.getElementById("birthday-msg").classList.remove("hidden");
+  document.getElementById("poem-section").classList.remove("hidden");
+  document.getElementById("open-when").classList.remove("hidden");
+  document.getElementById("gift-section").classList.remove("hidden");
+  document.getElementById("ending-line").classList.remove("hidden");
 
-// Swipe detection for showing poem
-let startX = 0, swiping = false;
-mainContent.addEventListener('touchstart', e => {
-  swiping = true;
-  startX = e.touches[0].clientX;
-});
-mainContent.addEventListener('touchmove', e => {
-  if (swiping && e.touches[0].clientX - startX < -100) {
-    showPoem();
-    swiping = false;
-  }
-});
-
-mainContent.addEventListener('mousedown', e => {
-  swiping = true;
-  startX = e.clientX;
-});
-mainContent.addEventListener('mousemove', e => {
-  if (swiping && e.clientX - startX < -100) {
-    showPoem();
-    swiping = false;
-  }
-});
-mainContent.addEventListener('mouseup', () => swiping = false);
-mainContent.addEventListener('mouseleave', () => swiping = false);
-
-// Falling heart animation
-function createHeart() {
-  const h = document.createElement('div');
-  h.className = 'heart-fall';
-  h.textContent = '💖';
-  h.style.left = Math.random() * 100 + 'vw';
-  h.style.animationDuration = 2 + Math.random() * 3 + 's';
-  document.body.appendChild(h);
-  setTimeout(() => h.remove(), 5000);
+  // Typing effect
+  typePoem(0);
+  document.getElementById("bg-music").play();
 }
 
-// Show poem and start typing
-function showPoem() {
-  msg.style.display = 'none';
-  poem.classList.remove('hidden');
-  poem.scrollIntoView({ behavior: 'smooth' });
-  startTyping();
+function typePoem(index) {
+  if (index >= poemLines.length) return;
 
-  // Show Open When section after 10 seconds
+  const poemContainer = document.getElementById("poem-section");
+  const line = document.createElement("div");
+  line.textContent = poemLines[index];
+  line.classList.add("typing");
+  poemContainer.appendChild(line);
+
   setTimeout(() => {
-    openWhen.classList.remove('hidden');
-    openWhen.scrollIntoView({ behavior: 'smooth' });
-  }, 10000);
+    line.classList.remove("typing");
+    typePoem(index + 1);
+  }, 1000);
 }
 
-// Typing animation for poem
-function startTyping() {
-  const lines = [
-    "A Midnight Encounter\n",
-    "It started with a question\nin a quiet, glowing night—\na game, a stranger,\na simple ask for help,\nand fate whispered,\n“Watch this.”\n",
-    "From strangers to friends,\nthen best of the best—\ndays blurred into joy,\nlaughs stitched into time,\nand suddenly,\nno one stood above you.\n",
-    "You made my ordinary days feel seen.\nYou made the pixels feel like home.\nAnd somewhere between\nfriendly banter and silent stays,\nyou fell for me—\nand I, against the odds,\nfell too.\n",
-    "We’ve had our storms,\nthe highs and the aches,\nbut still, you remain—\nin every moment my heart takes.\n",
-    "If there’s one thing I know,\nit’s this:\nyou are the kindest chapter\nmy heart has ever held.\nAnd no matter where time leads us,\nyou’ll always be\na chapter I’ll reread in my heart forever.\n"
-  ];
-
-  poem.innerHTML = ''; // clear poem container
-
-  lines.forEach((line, i) => {
-    const p = document.createElement('p');
-    p.classList.add('typing');
-    poem.appendChild(p);
-    typeLine(p, line, i * 3000);
-  });
-
-  // Add final soft note
-  setTimeout(() => {
-    const note = document.createElement('div');
-    note.className = 'ending-note';
-    note.textContent = '— from the girl who still smiles when she thinks of you.';
-    poem.appendChild(note);
-    note.scrollIntoView({ behavior: 'smooth' });
-  }, lines.length * 3000 + 1500);
-}
-
-// Typing line by line
-function typeLine(el, text, delay = 0) {
-  let i = 0;
-  setTimeout(() => {
-    const interval = setInterval(() => {
-      el.textContent += text.charAt(i);
-      i++;
-      if (i >= text.length) clearInterval(interval);
-    }, 30);
-  }, delay);
-}
-
-// Toggle Open When letters
+// Open When Toggle
 function toggleLetter(type) {
-  const allMessages = document.querySelectorAll('.letter-message');
-  allMessages.forEach(msg => msg.classList.add('hidden'));
-
-  const selected = document.getElementById(`msg-${type}`);
-  selected.classList.remove('hidden');
-  selected.scrollIntoView({ behavior: 'smooth' });
+  ['sad', 'miss', 'bad', 'love'].forEach(t => {
+    const el = document.getElementById(`msg-${t}`);
+    if (t === type) {
+      el.classList.toggle("hidden");
+    } else {
+      el.classList.add("hidden");
+    }
+  });
 }
+
+// Gift Confetti Surprise
 function openGift() {
-  const box = document.querySelector('.gift-box');
-  const message = document.getElementById('gift-message');
+  document.getElementById("gift-message").classList.remove("hidden");
 
-  box.style.display = 'none';
-  message.classList.remove('hidden');
-  message.scrollIntoView({ behavior: 'smooth' });
-
-  // Optional: confetti burst
   for (let i = 0; i < 100; i++) {
-    const confetti = document.createElement('div');
-    confetti.className = 'confetti';
-    confetti.style.left = Math.random() * 100 + 'vw';
-    confetti.style.animationDuration = 1 + Math.random() * 2 + 's';
+    const confetti = document.createElement("div");
+    confetti.classList.add("confetti");
+    confetti.style.left = Math.random() * 100 + "vw";
     confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+    confetti.style.animationDuration = (Math.random() * 2 + 3) + "s";
     document.body.appendChild(confetti);
-    setTimeout(() => confetti.remove(), 3000);
+
+    setTimeout(() => confetti.remove(), 5000);
   }
 }
