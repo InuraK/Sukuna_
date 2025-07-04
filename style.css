@@ -345,3 +345,38 @@ html, body {
   font-weight: bold;
   cursor: pointer;
 }
+#star-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('star.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 9998;
+  filter: blur(40px) saturate(0%) brightness(0.3);
+  animation: pixelClear 5s forwards ease;
+  opacity: 0;
+  animation-delay: 0.3s;
+}
+
+@keyframes pixelClear {
+  0% {
+    opacity: 0;
+    filter: blur(40px) saturate(0%) brightness(0.3);
+  }
+  40% {
+    opacity: 0.3;
+    filter: blur(20px) saturate(80%);
+  }
+  80% {
+    opacity: 0.8;
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
