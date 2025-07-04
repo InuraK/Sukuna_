@@ -1,6 +1,6 @@
 const landing = document.getElementById('landing');
 const mainContent = document.getElementById('main-content');
-const audio = document.getElementById('birthday-audio');
+const audio = document.getElementById('bg-music');
 const msg = document.getElementById('birthday-message');
 const poem = document.getElementById('poem-section');
 
