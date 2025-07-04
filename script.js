@@ -117,6 +117,26 @@ function openLetter(type) {
     case 'random':
       text = "SURPRISE! This page secretly adores you. And hey — did you know you're really cute when you smile reading this?";
       break;
+      case 'virtual-hug':
+  text = "Come here, kiddo 🤗💙\n\nClose your eyes for a second.\nNow imagine my arms wrapped around you — tight, warm, safe.\nThe world can be heavy sometimes, I know…\nBut I’m right here.\nAlways just a thought away.\n\nYou’re not alone.\nYou’re so loved.\nAnd I’m so proud of you — for all that you are, and all that you’re becoming.\n\n*Hug delivered.*\nNow breathe in. And let go of a little bit of that weight.\n\nYou're doing better than you think, meri jaan. 💫";
+  break;
+
+  case 'cant-sleep':
+  text = "Close your eyes, breathe slow. Imagine I’m whispering goodnight to you. You're safe, you're loved — and I’m here, always 💤💙";
+  break;
+
+  case 'need-laugh':
+  text = "Knock knock! Who’s there? You. You who? You whooooo~ you're the cutest person reading this 😄💫";
+  break;
+
+  case 'bored':
+  text = "If you’re bored, go reread the poem and pretend it’s a dramatic anime confession. Or just text me, I’ll drop chaos 😈💌";
+  break;
+
+  case 'just-because':
+  text = "No reason. No moment. Just a little reminder: you matter. You make my world brighter by simply being you. 💞";
+  break;
+
   }
 
   letterContent.textContent = text;
