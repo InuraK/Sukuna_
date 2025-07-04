@@ -190,3 +190,69 @@ html, body {
   color: white;
   cursor: pointer;
 }
+.memories-button-wrapper {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+#show-memories {
+  padding: 1rem 2rem;
+  background-color: #bde0fe;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: 0.3s ease;
+}
+
+#show-memories:hover {
+  background-color: #d0f0ff;
+  transform: scale(1.05);
+}
+
+#memories-gallery {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  animation: fadeInMemories 2s ease forwards;
+}
+
+.memory-group {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.memory-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.memory-row img {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.memory-row img:hover {
+  transform: scale(1.1);
+}
+
+.memory-caption {
+  font-style: italic;
+  color: #fce4ec;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+@keyframes fadeInMemories {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
