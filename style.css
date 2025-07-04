@@ -1,213 +1,131 @@
-/* General Layout */
-html, body {
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  height: auto;
-  overflow-x: hidden;
-  overflow-y: auto;
-  font-family: 'Segoe UI', sans-serif;
-  color: #fff;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
 }
 
-/* Landing (Heart Click) */
-#landing {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 50, 0.5);
-  flex-direction: column;
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('img.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
   text-align: center;
 }
 
-#heart-btn {
-  font-size: 5rem;
+#landing, #main-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+#heart {
+  font-size: 90px;
   cursor: pointer;
-  animation: pulse 2s infinite;
-  color: #ffccdd;
+  animation: pulse 1.5s infinite;
+  color: #ff99cc;
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
 }
 
-/* Hidden class */
 .hidden {
   display: none;
 }
 
-/* Poem Section */
-.poem {
-  max-width: 700px;
-  margin: 5rem auto 4rem auto;
-  padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.4);
+#birthday-message, .poem {
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 15px;
-  line-height: 1.8;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  color: #fce4ec;
+}
+
+#birthday-message h2 {
+  font-size: 1.7rem;
+}
+
+#birthday-message p {
+  line-height: 1.7;
   white-space: pre-wrap;
-  font-size: 1.1rem;
-  color: #fff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-/* Typing effect */
+.poem p {
+  text-align: left;
+  line-height: 1.6;
+  margin: 1.2rem 0;
+  font-size: 1rem;
+  display: inline-block;
+  width: 100%;
+}
+
 .typing {
-  border-right: 2px solid #fff;
-  animation: caret 1s steps(1) infinite;
+  border-right: 2px solid #fce4ec;
+  animation: blink 0.7s steps(1) infinite;
+  white-space: pre-wrap;
+  overflow: hidden;
 }
 
-@keyframes caret {
-  0%, 50% { border-color: transparent; }
-  100% { border-color: #fff; }
+@keyframes blink {
+  50% { border-color: transparent; }
 }
 
-/* Final Note After Poem */
+/* Heart falling effect */
+.heart-fall {
+  position: fixed;
+  top: -20px;
+  font-size: 24px;
+  color: #ff99cc;
+  animation: fall linear infinite;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(120vh); opacity: 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #birthday-message, .poem {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  #heart {
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  #birthday-message, .poem {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  #heart {
+    font-size: 60px;
+  }
+}
 .ending-note {
   margin-top: 3rem;
   font-style: italic;
-  text-align: center;
-  font-size: 1.1rem;
-  color: #fff;
-  background-color: rgba(255,255,255,0.1);
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  animation: fadeIn 1s ease;
+  color: #fcdde3;
+  font-size: 1rem;
+  opacity: 0;
+  animation: fadeInNote 2s ease forwards;
+  animation-delay: 1s;
 }
 
-/* Section Divider */
-hr {
-  border: none;
-  height: 1px;
-  background: rgba(255,255,255,0.2);
-  margin: 3rem auto;
-  width: 60%;
-}
-
-/* Open When Section */
-.open-when-section {
-  margin: 4rem auto;
-  padding: 2rem;
-  max-width: 800px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  color: #fff;
-  animation: fadeIn 2s ease;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-}
-
-.letter-grid {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
-}
-
-.letter {
-  background: rgba(255,255,255,0.2);
-  padding: 0.8rem 1.2rem;
-  margin: 0.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  font-weight: 500;
-}
-
-.letter:hover {
-  transform: scale(1.05);
-}
-
-.letter-message {
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  padding: 1rem;
-  margin: 1rem auto;
-  max-width: 600px;
-  color: #fefefe;
-  font-style: italic;
-  line-height: 1.6;
-  animation: fadeIn 1s ease;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-}
-
-/* Gift Box Surprise */
-#gift-section {
-  text-align: center;
-  margin: 3rem auto;
-  animation: fadeIn 2s ease;
-}
-
-.gift-box {
-  font-size: 4rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  animation: bounce 2s infinite;
-}
-
-.gift-box:hover {
-  transform: scale(1.1);
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.gift-message {
-  background-color: rgba(255, 255, 255, 0.2);
-  margin: 2rem auto;
-  padding: 1.5rem;
-  border-radius: 12px;
-  max-width: 600px;
-  color: #fff7fc;
-  font-size: 1.1rem;
-  animation: fadeIn 1s ease;
-}
-
-/* Confetti */
-.confetti {
-  position: fixed;
-  top: 0;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  animation: confetti-fall linear forwards;
-  z-index: 9999;
-  opacity: 1;
-}
-
-@keyframes confetti-fall {
+@keyframes fadeInNote {
   to {
-    transform: translateY(100vh) rotate(720deg);
-    opacity: 0;
-  }
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .letter-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-  .poem, .letter-message, .gift-message {
-    padding: 1rem;
-    font-size: 1rem;
-  }
-  .gift-box {
-    font-size: 3rem;
+    opacity: 1;
   }
 }
