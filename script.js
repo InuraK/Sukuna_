@@ -83,8 +83,9 @@ function startTyping() {
     note.className = 'ending-note';
     note.textContent = '— from the girl who still smiles when she thinks of you.';
     poem.appendChild(note);
+    document.getElementById('open-when-section').classList.remove('hidden');
     note.scrollIntoView({ behavior: 'smooth' });
-  }, lines.length * 3000 + 1500); // show after last line
+  }, lines.length * 5000 + 1500); // show after last line
 }
 
 function typeLine(el, text, delay = 0) {
