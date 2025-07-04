@@ -97,3 +97,30 @@ function typeLine(el, text, delay = 0) {
     }, 70);
   }, delay);
 }
+function openLetter(type) {
+  const letterBox = document.getElementById('letter-box');
+  const letterContent = document.getElementById('letter-content');
+  letterBox.classList.remove('hidden');
+
+  let text = '';
+  switch(type) {
+    case 'sad':
+      text = "It's okay to feel sad sometimes. Just remember, I'm always here for you, cheering for you silently. Take a deep breath — this too shall pass 💙";
+      break;
+    case 'miss':
+      text = "Missing me? Here’s a hug through the screen 🤗💌 You're in my heart, even when we’re not talking. Close your eyes — I’m probably thinking of you too.";
+      break;
+    case 'need-love':
+      text = "Here’s your reminder: You are loved. Deeply. Unconditionally. Always. And not just by anyone — by me 💕";
+      break;
+    case 'random':
+      text = "SURPRISE! This page secretly adores you. And hey — did you know you're really cute when you smile reading this?";
+      break;
+  }
+
+  letterContent.textContent = text;
+}
+
+function closeLetter() {
+  document.getElementById('letter-box').classList.add('hidden');
+}
