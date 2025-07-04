@@ -77,7 +77,7 @@ html, body {
   50% { border-color: transparent; }
 }
 
-/* Heart Falling Effect */
+/* Heart falling effect */
 .heart-fall {
   position: fixed;
   top: -20px;
@@ -98,20 +98,22 @@ html, body {
     padding: 1rem;
     font-size: 0.95rem;
   }
+
   #heart {
     font-size: 70px;
   }
 }
+
 @media (max-width: 480px) {
   #birthday-message, .poem {
     padding: 1rem;
     font-size: 0.9rem;
   }
+
   #heart {
     font-size: 60px;
   }
 }
-
 .ending-note {
   margin-top: 3rem;
   font-style: italic;
@@ -123,220 +125,7 @@ html, body {
 }
 
 @keyframes fadeInNote {
-  to { opacity: 1; }
-}
-
-/* Open When Section */
-#open-when-section {
-  margin-top: 4rem;
-  text-align: center;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  animation: fadeInNote 2s ease forwards;
-}
-
-#open-when-section h2 {
-  color: #fce4ec;
-  margin-bottom: 1rem;
-}
-
-.envelopes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.envelope {
-  background-color: #add8e6;
-  color: #333;
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.2s;
-  font-weight: bold;
-}
-
-.envelope:hover {
-  transform: scale(1.05);
-  background-color: #cfe8f3;
-}
-
-.letter-box {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background-color: #fff;
-  color: #333;
-  border-radius: 10px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.letter-box button {
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background-color: #ff99cc;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-}
-
-/* Memories */
-.memories-title {
-  text-align: center;
-  color: #ffe4f2;
-  font-size: 2rem;
-  margin-top: 3rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.memories-title:hover {
-  transform: scale(1.05);
-  color: #ffccdd;
-}
-
-.gallery {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4rem;
-  padding: 2rem 1rem;
-  animation: fadeInGallery 2s ease forwards;
-}
-
-.memory-set {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  position: relative;
-}
-
-.memory-set img {
-  width: 200px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  transform: scale(0);
-  animation: spreadImage 0.5s forwards ease-in-out;
-}
-
-.memory-set img:nth-child(1) { animation-delay: 0.1s; }
-.memory-set img:nth-child(2) { animation-delay: 0.2s; }
-.memory-set img:nth-child(3) { animation-delay: 0.3s; }
-.memory-set img:nth-child(4) { animation-delay: 0.4s; }
-
-.memory-caption {
-  margin-top: 1rem;
-  color: #fdd6f0;
-  font-style: italic;
-  text-align: center;
-  max-width: 500px;
-  font-size: 1rem;
-  animation: fadeInNote 2s ease forwards;
-}
-
-@keyframes spreadImage {
-  to { transform: scale(1); }
-}
-@keyframes fadeInGallery {
-  from { opacity: 0; transform: translateY(50px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* 🎁 Floating Gift Box */
-#gift-box {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 1000;
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-/* 🎉 Gift Message Box */
-#gift-message {
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.95);
-  padding: 2rem;
-  border-radius: 16px;
-  text-align: center;
-  z-index: 999;
-  box-shadow: 0 6px 30px rgba(0,0,0,0.3);
-  font-size: 1.2rem;
-  color: #222;
-}
-
-#gift-message button {
-  margin-top: 1rem;
-  padding: 0.7rem 1.5rem;
-  background-color: #ff77aa;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* 🌌 Starry Night Background */
-#night-sky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(#000022, #000000);
-  z-index: 1001;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  animation: fadeInNight 2s ease-in forwards;
-}
-
-@keyframes fadeInNight {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.stars {
-  width: 100%;
-  height: 100%;
-  background: transparent url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif') repeat;
-  opacity: 0.2;
-  position: absolute;
-  z-index: 0;
-}
-
-.night-quote {
-  color: #f0f8ff;
-  font-size: 1.5rem;
-  max-width: 600px;
-  text-align: center;
-  padding: 2rem;
-  z-index: 1;
-  animation: fadeInText 2s ease 1s forwards;
-  opacity: 0;
-}
-
-@keyframes fadeInText {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
