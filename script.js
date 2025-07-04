@@ -162,16 +162,14 @@ function openGift() {
 }
 
 function revealNightSky() {
-  // Hide everything else
-  document.body.style.transition = 'opacity 1s';
-  document.body.style.opacity = '0';
+  // Smooth background fade
+  document.body.style.transition = 'background 1s ease';
+  document.body.style.background = '#000000';
 
-  setTimeout(() => {
-    document.body.innerHTML = ''; // clears everything
+  // Hide the gift message
+  document.getElementById('gift-message').style.display = 'none';
 
-    // Then show night sky
-    document.body.appendChild(document.getElementById('night-sky'));
-    document.getElementById('night-sky').classList.remove('hidden');
-    document.body.style.opacity = '1';
-  }, 1000);
+  // Show the night sky section
+  document.getElementById('night-sky').classList.remove('hidden');
 }
+
