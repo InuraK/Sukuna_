@@ -348,7 +348,7 @@ html, body {
 /* Typewriter effect for the quote */
 .star-quote p {
   overflow: hidden;
-  white-space: normal;
+  white-space: wrap;
   border-right: 2px solid rgba(255, 255, 255, 0.5);
   animation: typing 6s steps(60, end), blink 0.75s step-end infinite;
   font-size: 1.4rem;
