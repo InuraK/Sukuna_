@@ -77,7 +77,7 @@ html, body {
   50% { border-color: transparent; }
 }
 
-/* Heart falling effect */
+/* Heart Falling Effect */
 .heart-fall {
   position: fixed;
   top: -20px;
@@ -98,22 +98,20 @@ html, body {
     padding: 1rem;
     font-size: 0.95rem;
   }
-
   #heart {
     font-size: 70px;
   }
 }
-
 @media (max-width: 480px) {
   #birthday-message, .poem {
     padding: 1rem;
     font-size: 0.9rem;
   }
-
   #heart {
     font-size: 60px;
   }
 }
+
 .ending-note {
   margin-top: 3rem;
   font-style: italic;
@@ -125,10 +123,10 @@ html, body {
 }
 
 @keyframes fadeInNote {
-  to {
-    opacity: 1;
-  }
+  to { opacity: 1; }
 }
+
+/* Open When Section */
 #open-when-section {
   margin-top: 4rem;
   text-align: center;
@@ -190,6 +188,8 @@ html, body {
   color: white;
   cursor: pointer;
 }
+
+/* Memories */
 .memories-title {
   text-align: center;
   color: #ffe4f2;
@@ -246,15 +246,13 @@ html, body {
 }
 
 @keyframes spreadImage {
-  to {
-    transform: scale(1);
-  }
+  to { transform: scale(1); }
 }
-
 @keyframes fadeInGallery {
   from { opacity: 0; transform: translateY(50px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 /* 🎁 Floating Gift Box */
 #gift-box {
   position: fixed;
@@ -284,6 +282,7 @@ html, body {
   z-index: 999;
   box-shadow: 0 6px 30px rgba(0,0,0,0.3);
   font-size: 1.2rem;
+  color: #222;
 }
 
 #gift-message button {
