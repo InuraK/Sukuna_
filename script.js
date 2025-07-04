@@ -150,3 +150,7 @@ function revealMemories() {
   document.getElementById('show-memories').classList.add('hidden');
   document.getElementById('memories-gallery').scrollIntoView({ behavior: 'smooth' });
 }
+function hideMemories() {
+  document.getElementById('memories-gallery').classList.add('hidden');
+  document.getElementById('show-memories').classList.remove('hidden');
+}
