@@ -37,6 +37,20 @@
 
     <!-- Poem Section (Typed dynamically via JS) -->
     <div class="poem hidden" id="poem-section"></div>
+    <!-- 🎁 Gift Box -->
+<div id="gift-box" class="hidden" onclick="openGift()">🎁</div>
+
+<!-- 💬 Gift Message -->
+<div id="gift-message" class="hidden">
+  <p>This site is my gift to you, Kiddo.</p>
+  <button onclick="revealNightSky()">Click Me</button>
+</div>
+
+<!-- 🌌 Night Sky -->
+<div id="night-sky" class="hidden">
+  <div class="stars"></div>
+  <p class="night-quote">“The universe conspired to make our paths cross — and I’m thankful every night.”</p>
+</div>
     <!-- Open When Section -->
 <div id="open-when-section" class="hidden">
   <h2>Open When...</h2>
@@ -90,20 +104,6 @@
 
   <!-- Script -->
   <script src="script.js"></script>
-  <!-- 🎁 Gift Box -->
-<div id="gift-box" class="hidden" onclick="openGift()">🎁</div>
-
-<!-- 💬 Gift Message -->
-<div id="gift-message" class="hidden">
-  <p>This site is my gift to you, Kiddo.</p>
-  <button onclick="revealNightSky()">Click Me</button>
-</div>
-
-<!-- 🌌 Night Sky -->
-<div id="night-sky" class="hidden">
-  <div class="stars"></div>
-  <p class="night-quote">“The universe conspired to make our paths cross — and I’m thankful every night.”</p>
-</div>
   <!-- Confetti Library -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </body>
