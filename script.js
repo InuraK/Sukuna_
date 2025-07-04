@@ -84,7 +84,6 @@ function startTyping() {
     note.textContent = '— from the girl who still smiles when she thinks of you.';
     poem.appendChild(note);
     document.getElementById('open-when-section').classList.remove('hidden');
-    showGiftBox();
     note.scrollIntoView({ behavior: 'smooth' });
   }, lines.length * 5000 + 1500); // show after last line
 }
@@ -154,31 +153,4 @@ function revealMemories() {
 function hideMemories() {
   document.getElementById('memories-gallery').classList.add('hidden');
   document.getElementById('show-memories').classList.remove('hidden');
-}
-function showStarryMessage() {
-  const overlay = document.getElementById('starry-message');
-  overlay.classList.add('visible');
-}
-
-function returnToHeart() {
-  document.getElementById('starry-message').classList.remove('visible');
-  document.getElementById('main-content').classList.add('hidden');
-  document.getElementById('heart-screen').classList.remove('hidden');
-  document.getElementById('bg-music').pause();
-}
-// Show gift box when poem typing ends
-function showGiftBox() {
-  document.getElementById('gift-box').classList.remove('hidden');
-}
-
-// Trigger gift message
-function openGift() {
-  document.getElementById('gift-message').classList.remove('hidden');
-}
-
-// Fade to starry background
-function fadeToStars() {
-  document.getElementById('gift-message').classList.add('hidden');
-  document.getElementById('main-content').classList.add('hidden');
-  showStarryMessage();
 }
