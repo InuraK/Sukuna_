@@ -271,3 +271,76 @@ html, body {
 #close-memories:hover {
   background-color: #ff9999;
 }
+#gift-box {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1000;
+  animation: bounce 1.5s infinite;
+  transition: transform 0.3s ease;
+}
+
+#gift-box:hover {
+  transform: scale(1.2);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+#gift-message-box {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffffdd;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  z-index: 9999;
+}
+
+#gift-message-box button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #bde0fe;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.fade-out {
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.star-quote {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-size: 1.3rem;
+  padding: 2rem;
+  z-index: 9999;
+}
+
+.star-quote button {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 12px;
+  background: #fff;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+}
