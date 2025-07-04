@@ -17,7 +17,7 @@
   <!-- Main Content -->
   <div id="main-content" class="hidden">
     <!-- Background music -->
-    <audio id="birthday-audio" src="aud1.mp3"></audio>
+    <audio id="birthday-audio" src="aud (1).mp3"></audio>
 
     <!-- Birthday Message -->
     <div class="message" id="birthday-message">
@@ -37,79 +37,28 @@
 
     <!-- Poem Section (Typed dynamically via JS) -->
     <div class="poem hidden" id="poem-section"></div>
-
-    <!-- 🎁 Gift Box -->
-    <div id="gift-box" class="hidden" onclick="openGift()">🎁</div>
-
-    <!-- 💬 Gift Message -->
-    <div id="gift-message" class="hidden">
-      <p>This site is my gift to you, Kiddo.</p>
-      <button onclick="revealNightSky()">Click Me</button>
-    </div>
-
-    <!-- 🌌 Night Sky -->
-    <div id="night-sky" class="hidden">
-      <div class="stars"></div>
-      <p class="night-quote">“The universe conspired to make our paths cross — and I’m thankful every night.”</p>
-    </div>
-
     <!-- Open When Section -->
-    <div id="open-when-section" class="hidden">
-      <h2>Open When...</h2>
-      <div class="envelopes">
-        <div class="envelope" onclick="openLetter('sad')">You're feeling sad</div>
-        <div class="envelope" onclick="openLetter('miss')">You miss me</div>
-        <div class="envelope" onclick="openLetter('need-love')">You need love</div>
-        <div class="envelope" onclick="openLetter('random')">You want a surprise</div>
-        <div class="envelope" onclick="openLetter('virtual-hug')">You want a virtual hug</div>
-        <div class="envelope" onclick="openLetter('cant-sleep')">You can't sleep</div>
-        <div class="envelope" onclick="openLetter('need-laugh')">You need to laugh</div>
-        <div class="envelope" onclick="openLetter('bored')">You're bored</div> 
-        <div class="envelope" onclick="openLetter('just-because')">Just because</div>
-      </div>
-      <div id="letter-box" class="letter-box hidden">
-        <p id="letter-content"></p>
-        <button onclick="closeLetter()">Close</button>
-      </div>
-    </div>
-
+<div id="open-when-section" class="hidden">
+  <h2>Open When...</h2>
+  <div class="envelopes">
+    <div class="envelope" onclick="openLetter('sad')">You're feeling sad</div>
+    <div class="envelope" onclick="openLetter('miss')">You miss me</div>
+    <div class="envelope" onclick="openLetter('need-love')">You need love</div>
+    <div class="envelope" onclick="openLetter('random')">You want a surprise</div>
+    <div class="envelope" onclick="openLetter('virtual-hug')">You need a virtual hug</div>
+    <div class="envelope" onclick="openLetter('cant-sleep')">You can't sleep</div>
+    <div class="envelope" onclick="openLetter('need-laugh')">You need to laugh</div>
+    <div class="envelope" onclick="openLetter('bored')">You're bored</div>
+    <div class="envelope" onclick="openLetter('just-because')">Just because</div>
+     </div>
+  <div id="letter-box" class="letter-box hidden">
+    <p id="letter-content"></p>
+    <button onclick="closeLetter()">Close</button>
   </div>
-
-  <!-- Memories Section -->
-  <div id="memories-section" class="hidden">
-    <h2 onclick="showMemories()" class="memories-title">Memories</h2>
-    <div id="memory-gallery" class="gallery hidden">
-      
-      <!-- 🎮 Game Screenshots -->
-      <div class="memory-set">
-        <img src="ff.jpg" alt="Game Screenshot 1" />
-        <img src="ff2.jpg" alt="Game Screenshot 2" />
-        <img src="au.jpg" alt="Game Screenshot 3" />
-        <img src="au2.png" alt="Game Screenshot 4" />
-        <p class="memory-caption">Late nights, loud laughter — we won pixels, but gained something real 🎮</p>
-      </div>
-
-      <!-- 💑 Together Pictures -->
-      <div class="memory-set">
-        <img src="heart.jpg" alt="Together 1" />
-        <img src="ghibli.jpg" alt="Together 2" />
-        <p class="memory-caption">From strangers to soulmates — and somehow, still my favorite coincidence 💗</p>
-      </div>
-
-      <!-- 📞 Call Screenshots -->
-      <div class="memory-set">
-        <img src="insta.jpg" alt="Call Screenshot 1" />
-        <img src="insta2.jpg" alt="Call Screenshot 2" />
-        <p class="memory-caption">Screens froze, voices echoed — but your presence? Always crystal clear 📞</p>
-      </div>
-
-    </div>
+</div>
   </div>
 
   <!-- Script -->
   <script src="script.js"></script>
-
-  <!-- Confetti Library -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </body>
 </html>
